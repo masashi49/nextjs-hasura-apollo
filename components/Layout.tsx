@@ -7,19 +7,19 @@ interface Props {
     children: ReactNode
     title: string
 }
-
-export const Layout: VFC<Props> = ({ children, title = "welcome to Next.js" }) => {
+export const Layout: VFC<Props> = ({
+    children,
+    title = 'Welcome to Nextjs',
+}) => {
     return (
-        <div>
+        <div className="flex flex-col justify-center items-center min-h-screen text-gray-600 text-sm font-mono">
             <Head>
-                <title>
-                    {title}
-                </title>
+                <title>{title}</title>
             </Head>
             <header>
-                <nav>
-                    <div>
-                        <div>
+                <nav className="bg-gray-800 w-screen">
+                    <div className="flex items-center pl-8 h-14">
+                        <div className="flex space-x-4">
                             <Link href="/">
                                 <a
                                     data-testid="home-nav"
@@ -72,7 +72,7 @@ export const Layout: VFC<Props> = ({ children, title = "welcome to Next.js" }) =
                     </div>
                 </nav>
             </header>
-            <main>
+            <main className="flex flex-1 flex-col justify-center items-center w-screen">
                 {children}
             </main>
             <footer className="w-full h-12 flex justify-center items-center border-t">
